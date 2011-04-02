@@ -8,6 +8,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Skeleton;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 import org.monk.MineQuest.Quester.Quester;
@@ -51,7 +52,9 @@ public class AbilityDeflectMissiles extends Ability implements DefendingAbility,
 
 	@Override
 	public int parseDefend(Quester quester, LivingEntity mob, int amount) {
-		if (myclass.getGenerator().nextDouble() < .6) {
+		if (!enabled) return 0;
+		
+		if ((mob instanceof Skeleton) && (myclass.getGenerator().nextDouble() < .6)) {
 			Location location = quester.getPlayer().getLocation();
 			World world = location.getWorld();
 			Random generator = myclass.getGenerator();
