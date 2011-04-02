@@ -39,7 +39,6 @@ public class AbilityHarvestLeaves extends Ability {
 		Location loc = new Location(location.getWorld(), (int)location.getX() - 15,
 				(int)location.getY() - 15, (int)location.getZ() - 15);
 
-		quester.sendMessage("Checking Block " + loc.getX() + " " + loc.getY() + " " + loc.getZ());
 		for (i = 0; i < 30; i++) {
 			loc.setY(location.getY() - 15);
 			for (j = 0; j < 30; j++) {
