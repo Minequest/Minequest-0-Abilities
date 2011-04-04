@@ -66,6 +66,7 @@ public class AbilityWallofWater extends Ability {
 		return "Wall of Water";
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
@@ -77,6 +78,7 @@ public class AbilityWallofWater extends Ability {
 		
 		player.getInventory().addItem(new ItemStack(325, 1));
 		player.getInventory().addItem(new ItemStack(325, 1));
+		player.updateInventory();
 		
 		while (rot < 0) rot += 360;
 		

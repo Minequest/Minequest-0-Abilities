@@ -54,6 +54,7 @@ public class AbilityHealOther extends Ability {
 		return "Heal Other";
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
@@ -62,6 +63,7 @@ public class AbilityHealOther extends Ability {
 			Quester other = MineQuest.getQuester((Player)entity);
 			if (other != null) {
 				player.getInventory().addItem(new ItemStack(325, 1));
+				player.updateInventory();
 				if (other.getHealth() < other.getMaxHealth()) {
 					other.setHealth(other.getHealth() + myclass.getCasterLevel() + myclass.getGenerator().nextInt(8) + 1);
 				} else {

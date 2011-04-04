@@ -50,11 +50,13 @@ public class AbilityHeal extends Ability {
 		return "Heal";
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		Player player = quester.getPlayer();
 		player.getInventory().addItem(new ItemStack(325, 1));
+		player.updateInventory();
 		if (quester.getHealth() < quester.getMaxHealth()) {
 			quester.setHealth(quester.getHealth() + myclass.getCasterLevel() + myclass.getGenerator().nextInt(8) + 1);
 		} else {
