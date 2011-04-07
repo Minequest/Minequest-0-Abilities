@@ -37,6 +37,8 @@ import org.monk.MineQuest.Quester.SkillClass.Combat.WarMage;
 public class AbilityFireball extends Ability {
 
 	private Location location;
+	private Quester quester;
+	private LivingEntity entity;
 
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -52,41 +54,17 @@ public class AbilityFireball extends Ability {
 		return "Fireball";
 	}
 	
-	public void setCast(Location location)
+	public void setCast(Quester quester, Location location, LivingEntity entity)
 	{
+		this.quester = quester;
 		this.location = location;
+		this.entity = entity;
 	}
 	
 	@Override
 	public void eventActivate() {
-		double leftx, leftz;
-		int x, z;
-		World world = location.getWorld();
+		castAbility(quester, location, entity);
 		
-		leftx = location.getX() % 1;
-		leftz = location.getZ() % 1;
-		x = (leftx < .5)?-1:1;
-		z = (leftz < .5)?-1:1;
-		
-		Block nblock = world.getBlockAt((int)location.getX(), 
-				getNearestY(location.getWorld(), (int)location.getX(), (int)location.getY(), (int)location.getZ()), 
-				(int)location.getZ());
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
-		
-		nblock = world.getBlockAt((int)location.getX() + x, 
-				getNearestY(location.getWorld(), (int)location.getX() + x, (int)location.getY(), (int)location.getZ()), 
-				(int)location.getZ());
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
-		
-		nblock = world.getBlockAt((int)location.getX() + x, 
-				getNearestY(location.getWorld(), (int)location.getX() + x, (int)location.getY(), (int)location.getZ() + z), 
-				(int)location.getZ() + z);
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
-		
-		nblock = world.getBlockAt((int)location.getX(), 
-				getNearestY(location.getWorld(), (int)location.getX(), (int)location.getY(), (int)location.getZ() + z), 
-				(int)location.getZ() + z);
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
 		super.eventActivate();
 	}
 	

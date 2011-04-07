@@ -101,7 +101,7 @@ public class AbilityDodgeA extends Ability implements PassiveAbility, DefendingA
 						player.getLocation().getPitch());
 			}
 			if (player.getWorld().getBlockAt(location).getType() == Material.AIR) {
-				player.teleportTo(location);
+				player.teleport(location);
 			}
 			return amount;
 		}

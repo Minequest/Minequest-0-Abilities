@@ -22,10 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.monk.MineQuest.MineQuest;
+import org.monk.MineQuest.Event.Absolute.BlockCDEvent;
 import org.monk.MineQuest.Quester.Quester;
 import org.monk.MineQuest.Quester.SkillClass.SkillClass;
 import org.monk.MineQuest.Quester.SkillClass.Combat.Archer;
@@ -61,7 +64,7 @@ public class AbilityFireArrow extends Ability {
 			Block block = player.getWorld().getBlockAt((int)loc.getX(), 
 					getNearestY(location.getWorld(), (int)location.getX(), (int)location.getY(), (int)location.getZ()), 
 					(int)loc.getZ());
-			block.setTypeId(51);
+			MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, block, Material.FIRE));
 			
 		} else {
 			giveManaCost(player);

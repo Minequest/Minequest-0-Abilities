@@ -35,7 +35,7 @@ public class AbilityTeleport extends Ability {
 		}
 		loc.setY(getNearestY(loc.getWorld(), (int)loc.getX(), (int)loc.getY(), (int)loc.getZ()));
 		if (quester.canEdit(location.getWorld().getBlockAt(location))) {
-			player.teleportTo(loc);
+			player.teleport(loc);
 		}
 	}
 

@@ -27,15 +27,17 @@ public class AbilityFireblast extends Ability {
 		AbilityFireball ability;
 		for (LivingEntity lentity : getEntities(entity, 4)) {
 			ability = new AbilityFireball();
-			ability.setCast(new Location(lentity.getWorld(),
+			ability.setCast(quester, new Location(lentity.getWorld(),
 					lentity.getLocation().getX(),
 					lentity.getLocation().getY(),
-					lentity.getLocation().getZ()));
+					lentity.getLocation().getZ()), entity);
 			MineQuest.getEventParser().addEvent(new AbilityEvent(100, ability));
 		}
 		
-		MineQuest.getEventParser().addEvent(new ExplosionEvent(10, location.getWorld(), 
-				location.getX(), location.getY(), location.getZ(), 3.25f, 3));
+		if (quester.canEdit(location.getBlock())) {
+			MineQuest.getEventParser().addEvent(new ExplosionEvent(10, location.getWorld(), 
+					location.getX(), location.getY(), location.getZ(), 3.25f, 3));
+		}
 	}
 	
 	@Override

@@ -73,7 +73,7 @@ public class AbilitySprintA extends Ability {
 			loc.setZ(loc.getZ() + 1);
 		}
 		if (quester.canEdit(location.getWorld().getBlockAt(location))) {
-			player.teleportTo(loc);
+			player.teleport(loc);
 		}
 	}
 

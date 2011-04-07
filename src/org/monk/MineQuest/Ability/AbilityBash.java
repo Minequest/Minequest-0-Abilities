@@ -54,7 +54,7 @@ public class AbilityBash extends Ability {
 		}
 
 		if (entity.getWorld().getBlockAt(loc).getType() == Material.AIR) {
-			entity.teleportTo(loc);
+			entity.teleport(loc);
 		}
 	}
 
