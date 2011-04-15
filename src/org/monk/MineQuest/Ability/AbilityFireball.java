@@ -123,7 +123,11 @@ public class AbilityFireball extends Ability {
 		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
 		
 		if (entity != null) {
-			MineQuest.damage(entity, 2 + (myclass.getCasterLevel() / 3));
+			int level = MineQuest.getAdjustment();
+			if (myclass != null) {
+				level = myclass.getCasterLevel() / 3;
+			}
+			MineQuest.damage(entity, 2 + level);
 		}
 	}
 
