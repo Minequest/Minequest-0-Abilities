@@ -75,18 +75,9 @@ public class AbilityIceSphere extends Ability {
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
-		Player player = null;
-		if (quester != null) {
-			player = quester.getPlayer();
-		}
 		int j,k;
-		if (entity == null) {
-			player.sendMessage("Cannot cast on null entity");
-			giveManaCost(player);
-			return;
-		}
 		
-		World world = entity.getWorld();
+		World world = location.getWorld();
 		for (j = -1; j < 2; j++) {
 			for (k = -1; k < 2; k++) {
 				Block nblock = world.getBlockAt((int)location.getX() + j, 
@@ -96,7 +87,9 @@ public class AbilityIceSphere extends Ability {
 			}
 		}
 		
-		MineQuest.damage(entity, 3 + (myclass.getCasterLevel() / 2), quester);
+		if (entity != null) {
+			MineQuest.damage(entity, 3 + (myclass.getCasterLevel() / 2), quester);
+		}
 	}
 
 	@Override
