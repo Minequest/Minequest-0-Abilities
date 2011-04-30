@@ -63,9 +63,7 @@ public class AbilityTrape extends Ability {
 	
 	@Override
 	public int getCastTime() {
-//		return 2500;
-		// For testing!!
-		return 0;
+		return 2500;
 	}
 	
 	@Override
