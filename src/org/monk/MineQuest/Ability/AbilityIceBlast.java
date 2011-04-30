@@ -28,7 +28,7 @@ public class AbilityIceBlast extends Ability {
 						location.getY(), location.getZ(), 0, 0));
 
 		for (LivingEntity lentity : Ability.getEntities(location, 10)) {
-			ability.castAbility(quester, location, lentity);
+			ability.castAbility(quester, lentity.getLocation(), lentity);
 		}
 	}
 
