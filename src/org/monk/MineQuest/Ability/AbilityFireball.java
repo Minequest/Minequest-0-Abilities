@@ -76,13 +76,6 @@ public class AbilityFireball extends Ability {
 		if (quester != null) {
 			player = quester.getPlayer();
 		}
-		if (entity == null) {
-			if (quester != null) {
-				quester.sendMessage("Must be cast on a Living Entity");
-				giveManaCost(player);
-			}
-			return;
-		}
 		
 		if (player != null) {
 			world = player.getWorld();

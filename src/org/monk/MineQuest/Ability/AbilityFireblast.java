@@ -34,7 +34,7 @@ public class AbilityFireblast extends Ability {
 			MineQuest.getEventParser().addEvent(new AbilityEvent(100, ability));
 		}
 		
-		if (quester.canEdit(location.getBlock())) {
+		if ((quester == null) || quester.canEdit(location.getBlock())) {
 			MineQuest.getEventParser().addEvent(new ExplosionEvent(10, location.getWorld(), 
 					location.getX(), location.getY(), location.getZ(), 3.25f, 3));
 		}
