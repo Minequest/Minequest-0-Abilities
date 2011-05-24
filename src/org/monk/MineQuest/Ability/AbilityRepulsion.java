@@ -31,6 +31,8 @@ import org.monk.MineQuest.Quester.Quester;
 public class AbilityRepulsion extends Ability {
 
 	public AbilityRepulsion() {
+		super();
+		config = new int[] {10};
 	}
 	
 	@Override
@@ -56,7 +58,7 @@ public class AbilityRepulsion extends Ability {
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
-		purgeEntities(quester.getPlayer(), 10, PurgeType.ALL);
+		purgeEntities(quester.getPlayer(), config[0], PurgeType.ALL);
 	}
 
 	@Override

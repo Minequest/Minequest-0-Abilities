@@ -50,6 +50,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityIceSphere extends Ability {
+	public AbilityIceSphere() {
+		super();
+		config = new int[] {3, 2};
+	}
 
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -86,7 +90,7 @@ public class AbilityIceSphere extends Ability {
 		}
 		
 		if (entity != null) {
-			MineQuest.damage(entity, 3 + (myclass.getCasterLevel() / 2), quester);
+			MineQuest.damage(entity, config[0] + (myclass.getCasterLevel() / config[1]), quester);
 		}
 	}
 

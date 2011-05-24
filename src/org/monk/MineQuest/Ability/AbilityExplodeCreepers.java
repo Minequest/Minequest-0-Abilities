@@ -16,6 +16,10 @@ import org.monk.MineQuest.Event.Relative.ExplosionEvent;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityExplodeCreepers extends Ability {
+	public AbilityExplodeCreepers() {
+		super();
+		config = new int[] {15, 4, 2};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -27,9 +31,9 @@ public class AbilityExplodeCreepers extends Ability {
 			world = entity.getWorld();
 		}
 		
-		for (LivingEntity lentity : getEntities((quester != null)?quester.getPlayer():entity, 15)) {
+		for (LivingEntity lentity : getEntities((quester != null)?quester.getPlayer():entity, config[0])) {
 			if (lentity instanceof Creeper) {
-				MineQuest.getEventParser().addEvent(new ExplosionEvent(10, world, lentity, 0, 0, 0, 4, 2));
+				MineQuest.getEventParser().addEvent(new ExplosionEvent(10, world, lentity, 0, 0, 0, config[1], config[2]));
 				MineQuest.getEventParser().addEvent(new HealthEvent(20, lentity, 0));
 			}
 		}

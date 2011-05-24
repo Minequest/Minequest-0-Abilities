@@ -17,6 +17,11 @@ import org.monk.MineQuest.Ability.PassiveAbility;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityDeflectMissiles extends Ability implements DefendingAbility, PassiveAbility {
+	
+	public AbilityDeflectMissiles() {
+		super();
+		config = new int[] {60};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -49,8 +54,9 @@ public class AbilityDeflectMissiles extends Ability implements DefendingAbility,
 	@Override
 	public int parseDefend(Quester quester, LivingEntity mob, int amount) {
 		if (!enabled) return 0;
+		double chance = ((double)config[0]) / 100;
 		
-		if ((mob instanceof Skeleton) && (myclass.getGenerator().nextDouble() < .6)) {
+		if ((mob instanceof Skeleton) && (myclass.getGenerator().nextDouble() < chance)) {
 			Location location = quester.getPlayer().getLocation();
 			World world = location.getWorld();
 			Random generator = myclass.getGenerator();

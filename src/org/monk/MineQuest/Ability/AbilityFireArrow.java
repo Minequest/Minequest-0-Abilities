@@ -33,6 +33,10 @@ import org.monk.MineQuest.Event.Absolute.BlockCDEvent;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityFireArrow extends Ability {
+	public AbilityFireArrow() {
+		super();
+		config = new int[] {0};
+	}
 	
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -65,6 +69,9 @@ public class AbilityFireArrow extends Ability {
 					(int)loc.getZ());
 			MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, block, Material.FIRE));
 			
+			if ((entity != null) && (config[0] > 0)) {
+				MineQuest.damage(entity, config[0], quester);
+			}
 		} else {
 			giveManaCost(player);
 			player.sendMessage("Fire Arrow must be bound to a bow attack - Recommended that it is ranged");

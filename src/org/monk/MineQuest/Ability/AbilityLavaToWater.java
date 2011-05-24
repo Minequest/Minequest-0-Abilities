@@ -29,6 +29,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityLavaToWater extends Ability {
+	public AbilityLavaToWater() {
+		super();
+		config = new int[] {15};
+	}
 
 	@Override
 	public int getReqLevel() {
@@ -64,9 +68,9 @@ public class AbilityLavaToWater extends Ability {
 		Location loc = quester.getPlayer().getLocation();
 		int x, y, z;
 		
-		for (x = (int)(loc.getX() - 15); x < (int)(loc.getX() + 15); x++) {
-			for (y = (int)(loc.getY() - 15); y < (int)(loc.getY() + 15); y++) {
-				for (z = (int)(loc.getZ() - 15); z < (int)(loc.getZ() + 15); z++) {
+		for (x = (int)(loc.getX() - config[0]); x < (int)(loc.getX() + config[0]); x++) {
+			for (y = (int)(loc.getY() - config[0]); y < (int)(loc.getY() + config[0]); y++) {
+				for (z = (int)(loc.getZ() - config[0]); z < (int)(loc.getZ() + config[0]); z++) {
 					Location block_loc = new Location(loc.getWorld(), x, y, z);
 					
 					if (loc.getWorld().getBlockAt(block_loc).getType() == Material.LAVA) {

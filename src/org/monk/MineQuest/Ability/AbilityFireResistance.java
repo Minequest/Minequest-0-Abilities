@@ -29,6 +29,9 @@ import org.monk.MineQuest.Ability.PassiveAbility;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityFireResistance extends Ability implements PassiveAbility {
+	public AbilityFireResistance() {
+		super();
+	}
 	
 	@Override
 	public String getName() {

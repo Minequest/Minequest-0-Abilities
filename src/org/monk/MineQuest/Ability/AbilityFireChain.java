@@ -29,6 +29,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityFireChain extends Ability {
+	public AbilityFireChain() {
+		super();
+		config = new int[] {10, 10, 3, 100};
+	}
 	
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -65,13 +69,15 @@ public class AbilityFireChain extends Ability {
 			LivingEntity this_entity;
 			int i;
 
-			this_entity = getRandomEntity(entity, 10);
-			for (i = 0; i < 3 + myclass.getCasterLevel(); i++) {
-				fireball.castAbility(quester, new Location(player.getWorld(), (int) entity.getLocation().getX(),
-						(int) entity.getLocation().getY(), (int) entity.getLocation().getZ()),
-						entity);
-				this_entity = getRandomEntity(this_entity, 10);
-				if (myclass.getGenerator().nextDouble() < .1) {
+			this_entity = getRandomEntity(entity, config[0]);
+			for (i = 0; i < config[2] + (((double)config[3]) / 100 * myclass.getCasterLevel()); i++) {
+				if (this_entity != null) {
+					fireball.castAbility(quester, new Location(player.getWorld(), (int) this_entity.getLocation().getX(),
+							(int) this_entity.getLocation().getY(), (int) this_entity.getLocation().getZ()),
+							this_entity);
+					this_entity = getRandomEntity(this_entity, config[0]);
+				}
+				if (myclass.getGenerator().nextDouble() < (((double)config[1]) / 100)) {
 					break;
 				}
 			}

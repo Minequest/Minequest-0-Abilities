@@ -12,12 +12,16 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityCriticalShot extends Ability {
+	public AbilityCriticalShot() {
+		super();
+		config = new int[] {10};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		if (entity != null) {
-			MineQuest.damage(entity, 10);
+			MineQuest.damage(entity, config[0]);
 		} else {
 			giveManaCost(quester.getPlayer());
 			notify(quester, "Must be bound to an attack");

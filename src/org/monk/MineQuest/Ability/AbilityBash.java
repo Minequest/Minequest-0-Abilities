@@ -12,6 +12,12 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityBash extends Ability {
+	
+	public AbilityBash() {
+		super();
+		config = new int[] { 15 };
+	}
+	
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -21,7 +27,7 @@ public class AbilityBash extends Ability {
 			giveManaCost(quester.getPlayer());
 		}
 		
-		MineQuest.damage(entity, 15, quester);
+		MineQuest.damage(entity, config[0], quester);
 
 		double rot = entity.getLocation().getYaw() % 360;
 		while (rot < 0) rot += 360;

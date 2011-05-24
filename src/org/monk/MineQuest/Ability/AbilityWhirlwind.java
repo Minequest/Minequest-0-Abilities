@@ -15,6 +15,10 @@ import org.monk.MineQuest.Event.Relative.AuraEvent;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityWhirlwind extends Ability {
+	public AbilityWhirlwind() {
+		super();
+		config = new int[] {9};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -30,7 +34,7 @@ public class AbilityWhirlwind extends Ability {
 			MineQuest.getEventParser().addEvent(new EntityTeleportEvent(100 * (i + 1), quester, loc));
 		}
 		purgeEntities(quester.getPlayer(), 2, PurgeType.ALL);
-		MineQuest.getEventParser().addEvent(new AuraEvent(quester, 500, 500, -9, false, 3));
+		MineQuest.getEventParser().addEvent(new AuraEvent(quester, 500, 500, -config[0], false, 3));
 	}
 
 	@Override

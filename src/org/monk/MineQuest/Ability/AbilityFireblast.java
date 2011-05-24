@@ -14,6 +14,10 @@ import org.monk.MineQuest.Event.Absolute.ExplosionEvent;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityFireblast extends Ability {
+	public AbilityFireblast() {
+		super();
+		config = new int[] {4, 325, 3};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -24,7 +28,7 @@ public class AbilityFireblast extends Ability {
 		}
 		
 		AbilityFireball ability;
-		for (LivingEntity lentity : getEntities(entity, 4)) {
+		for (LivingEntity lentity : getEntities(entity, config[0])) {
 			ability = new AbilityFireball();
 			ability.setCast(quester, new Location(lentity.getWorld(),
 					lentity.getLocation().getX(),
@@ -35,7 +39,7 @@ public class AbilityFireblast extends Ability {
 		
 		if ((quester == null) || quester.canEdit(location.getBlock())) {
 			MineQuest.getEventParser().addEvent(new ExplosionEvent(10, location.getWorld(), 
-					location.getX(), location.getY(), location.getZ(), 3.25f, 3));
+					location.getX(), location.getY(), location.getZ(), ((float)config[1]) / 100, config[2]));
 		}
 	}
 	

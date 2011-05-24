@@ -23,13 +23,19 @@ import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
 import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Ability.PassiveAbility;
 import org.monk.MineQuest.Quester.Quester;
 
-public class AbilityEnhancedFlint extends Ability implements PassiveAbility {
+public class AbilityEnhancedFlint extends Ability implements PassiveAbility, BreakingAbility {
+	
+	public AbilityEnhancedFlint() {
+		super();
+		config = new int[] {100};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -62,6 +68,17 @@ public class AbilityEnhancedFlint extends Ability implements PassiveAbility {
 	@Override
 	public String getSkillClass() {
 		return "Digger";
+	}
+
+	@Override
+	public void blockBreak(Quester quester, Block block) {
+		if (block.getType() == Material.GRAVEL) {
+			double chance = ((double)config[0]) / 100;
+			if (myclass.getGenerator().nextDouble() < chance) {
+				block.getWorld().dropItemNaturally(block.getLocation(),
+						new ItemStack(Material.FLINT, 1));
+			}
+		}
 	}
 
 }

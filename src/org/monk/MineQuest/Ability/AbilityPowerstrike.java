@@ -29,6 +29,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityPowerstrike extends Ability{
+	public AbilityPowerstrike() {
+		super();
+		config = new int[] {10};
+	}
 	
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -53,10 +57,10 @@ public class AbilityPowerstrike extends Ability{
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		if (entity != null) {
-			MineQuest.damage(entity, 10, quester);
+			MineQuest.damage(entity, config[0], quester);
 		} else {
 			giveManaCost(quester.getPlayer());
-			quester.getPlayer().sendMessage("PowerStrike must be bound to an attack");
+			quester.getPlayer().sendMessage(getName() + " must be bound to an attack");
 			return;
 		}
 	}

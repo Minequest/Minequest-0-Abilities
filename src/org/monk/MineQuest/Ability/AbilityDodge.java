@@ -34,6 +34,8 @@ import org.monk.MineQuest.Quester.Quester;
 public class AbilityDodge extends Ability implements PassiveAbility, DefendingAbility {
 
 	public AbilityDodge() {
+		super();
+		config = new int[] {100, 25};
 	}
 	
 	@Override
@@ -64,34 +66,37 @@ public class AbilityDodge extends Ability implements PassiveAbility, DefendingAb
 		
 		Player player = quester.getPlayer();
 		
-		if (myclass.getGenerator().nextDouble() < (.01 + (.0025 * myclass.getLevel()))) {
+		double chance = ((double)config[0]) / 10000;
+		chance = chance + (((double)config[1]) / 10000 * myclass.getLevel());
+		
+		if (myclass.getGenerator().nextDouble() < (chance)) {
 			double rot = player.getLocation().getYaw() % 360;
 			while (rot < 0) rot += 360;
 			Location location = player.getLocation();
 			
 			if ((rot  < 45) && (rot > 315)) {
-				player.sendMessage("Dodging 1");
+				player.sendMessage("Dodging");
 				location = new Location(player.getWorld(), 
 						(int)player.getLocation().getX() - 1, 
 						(int)player.getLocation().getY(), 
 						player.getLocation().getZ(), player.getLocation().getYaw(), 
 						player.getLocation().getPitch());
 			} else if ((rot > 45) && (rot < 135)) {
-				player.sendMessage("Dodging 2");
+				player.sendMessage("Dodging");
 				location = new Location(player.getWorld(), 
 						player.getLocation().getX(), 
 						(int)player.getLocation().getY(), 
 						player.getLocation().getZ() - 1, player.getLocation().getYaw(), 
 						player.getLocation().getPitch());
 			} else if ((rot > 135) && (rot < 225)) {
-				player.sendMessage("Dodging 3");
+				player.sendMessage("Dodging");
 				location = new Location(player.getWorld(), 
 						(int)player.getLocation().getX() + 1, 
 						(int)player.getLocation().getY(), 
 						player.getLocation().getZ(), player.getLocation().getYaw(), 
 						player.getLocation().getPitch());
 			} else {
-				player.sendMessage("Dodging 4");
+				player.sendMessage("Dodging");
 				location = new Location(player.getWorld(), 
 						player.getLocation().getX(), 
 						getNearestY(player.getWorld(), (int)player.getLocation().getX(), 

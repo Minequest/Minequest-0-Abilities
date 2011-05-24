@@ -38,6 +38,11 @@ public class AbilityFireball extends Ability {
 	private Location location;
 	private Quester quester;
 	private LivingEntity entity;
+	
+	public AbilityFireball() {
+		super();
+		config = new int[] {2, 3};
+	}
 
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -117,9 +122,9 @@ public class AbilityFireball extends Ability {
 		if (entity != null) {
 			int level = MineQuest.getAdjustment();
 			if (myclass != null) {
-				level = myclass.getCasterLevel() / 3;
+				level = myclass.getCasterLevel() / config[1];
 			}
-			MineQuest.damage(entity, 2 + level);
+			MineQuest.damage(entity, config[0] + level);
 		}
 	}
 

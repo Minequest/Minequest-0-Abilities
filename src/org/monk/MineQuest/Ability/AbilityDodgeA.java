@@ -34,6 +34,8 @@ import org.monk.MineQuest.Quester.Quester;
 public class AbilityDodgeA extends Ability implements PassiveAbility, DefendingAbility {
 	
 	public AbilityDodgeA() {
+		super();
+		config = new int[] {100, 25};
 	}
 	
 	@Override
@@ -65,7 +67,10 @@ public class AbilityDodgeA extends Ability implements PassiveAbility, DefendingA
 		
 		Player player = quester.getPlayer();
 		
-		if (myclass.getGenerator().nextDouble() < (.01 + (.0025 * myclass.getLevel()))) {
+		double chance = ((double)config[0]) / 10000;
+		chance = chance + (((double)config[1]) / 10000 * myclass.getLevel());
+		
+		if (myclass.getGenerator().nextDouble() < (chance)) {
 			double rot = player.getLocation().getYaw() % 360;
 			while (rot < 0) rot += 360;
 			Location location = player.getLocation();

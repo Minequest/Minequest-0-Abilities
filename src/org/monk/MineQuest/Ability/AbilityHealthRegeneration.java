@@ -15,12 +15,16 @@ import org.monk.MineQuest.Event.Relative.AuraEvent;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityHealthRegeneration extends Ability implements PassiveAbility {
+	public AbilityHealthRegeneration() {
+		super();
+		config = new int[] {5000, 300000, 1};
+	}
 	
 	@Override
 	public void enable(Quester quester) {
 		super.enable(quester);
-		MineQuest.getEventParser().addEvent(new AbilityEvent(300000, this));
-		MineQuest.getEventParser().addEvent(new AuraEvent(quester, 5000, 300000, 1, true, 0));
+		MineQuest.getEventParser().addEvent(new AbilityEvent(config[1], this));
+		MineQuest.getEventParser().addEvent(new AuraEvent(quester, config[0], config[1], config[2], true, 0));
 	}
 	
 	@Override

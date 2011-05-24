@@ -30,6 +30,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityBridge extends Ability {
+	public AbilityBridge() {
+		super();
+		config = new int[] {15};
+	}
 	
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -101,7 +105,7 @@ public class AbilityBridge extends Ability {
 			loc_2.setX(loc_2.getX() + 1);
 		}
 		
-		for (i = 0; i < 15; i++) {
+		for (i = 0; i < config[0]; i++) {
 			loc_1.setX(loc_1.getX() + x_change);
 			loc_1.setZ(loc_1.getZ() + z_change);
 			loc_2.setX(loc_2.getX() + x_change);

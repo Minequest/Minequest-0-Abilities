@@ -31,12 +31,16 @@ import org.monk.MineQuest.Event.PoisonEvent;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityPoisonArrow extends Ability {
+	public AbilityPoisonArrow() {
+		super();
+		config = new int[] {1500, 1, 10};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		if (entity != null) {
-			MineQuest.getEventParser().addEvent(new PoisonEvent(1500, entity, 1, 10));
+			MineQuest.getEventParser().addEvent(new PoisonEvent(config[0], entity, config[1], config[2]));
 		} else {
 			giveManaCost(quester.getPlayer());
 			quester.sendMessage("Must be bound to an attack");

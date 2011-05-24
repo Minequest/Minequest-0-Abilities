@@ -29,6 +29,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityHeal extends Ability {
+	public AbilityHeal() {
+		super();
+		config = new int[] {1, 100, 8, 0};
+	}
 	
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -57,7 +61,9 @@ public class AbilityHeal extends Ability {
 		player.getInventory().addItem(new ItemStack(325, 1));
 		player.updateInventory();
 		if (quester.getHealth() < quester.getMaxHealth()) {
-			quester.setHealth(quester.getHealth() + myclass.getCasterLevel() + myclass.getGenerator().nextInt(8) + 1);
+			int min = config[0] + (int)(((double)config[1] / 100) * myclass.getCasterLevel());
+			int max = config[2] + (int)(((double)config[3] / 100) * myclass.getCasterLevel());
+			quester.setHealth(quester.getHealth() + myclass.getGenerator().nextInt(max - min + 1) + min);
 		} else {
 			player.sendMessage("Quester must not be at full health to heal");
 			return;

@@ -31,6 +31,8 @@ import org.monk.MineQuest.Quester.Quester;
 public class AbilityHighJump extends Ability {
 
 	public AbilityHighJump() {
+		super();
+		config = new int[] {2, 50};
 	}
 	
 	@Override
@@ -60,7 +62,8 @@ public class AbilityHighJump extends Ability {
 		Location locp = player.getLocation();
 		double rot = Math.PI * (locp.getYaw() / -180);
 
-		Vector vel = new Vector(.5*(Math.sin(rot)), 2, .5*(Math.cos(rot)));
+		double scale = ((double)config[1]) / 100;
+		Vector vel = new Vector(scale*(Math.sin(rot)), config[0], scale*(Math.cos(rot)));
 		player.setVelocity(vel);
 //		if ((loc.getBlock().getType() != Material.AIR) && (quester.canEdit(loc.getBlock()))) {
 //			player.teleport(loc);

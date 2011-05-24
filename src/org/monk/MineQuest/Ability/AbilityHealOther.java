@@ -30,8 +30,9 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityHealOther extends Ability {
-	
 	public AbilityHealOther() {
+		super();
+		config = new int[] {1, 100, 8, 0};
 	}
 	
 	@Override
@@ -69,7 +70,9 @@ public class AbilityHealOther extends Ability {
 					player.updateInventory();
 				}
 				if (other.getHealth() < other.getMaxHealth()) {
-					other.setHealth(other.getHealth() + myclass.getCasterLevel() + myclass.getGenerator().nextInt(8) + 1);
+					int min = config[0] + (int)(((double)config[1] / 100) * myclass.getCasterLevel());
+					int max = config[2] + (int)(((double)config[3] / 100) * myclass.getCasterLevel());
+					other.setHealth(other.getHealth() + myclass.getGenerator().nextInt(max - min + 1) + min);
 				} else {
 					if (player != null) {
 						player.sendMessage("Quester must not be at full health to heal");

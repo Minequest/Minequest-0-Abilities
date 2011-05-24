@@ -16,6 +16,8 @@ public class AbilityToughness extends Ability implements DefendingAbility, Passi
 	private boolean damage;
 	
 	public AbilityToughness() {
+		super();
+		config = new int[] {1};
 		damage = false;
 	}
 
@@ -53,7 +55,7 @@ public class AbilityToughness extends Ability implements DefendingAbility, Passi
 		}
 		damage = false;
 		
-		return 1;
+		return config[0];
 	}
 
 	@Override

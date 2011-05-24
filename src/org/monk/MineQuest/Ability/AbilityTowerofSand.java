@@ -30,6 +30,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityTowerofSand extends Ability {
+	public AbilityTowerofSand() {
+		super();
+		config = new int[] {64};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -38,7 +42,7 @@ public class AbilityTowerofSand extends Ability {
 				location.getY(), location.getZ());
 		int i;
 		
-		for (i = 0; i < 64; i++) {
+		for (i = 0; i < config[0]; i++) {
 			loc.setY(loc.getY() + 1);
 			
 			Block block = loc.getWorld().getBlockAt(loc);

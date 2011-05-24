@@ -29,7 +29,12 @@ import org.monk.MineQuest.MineQuest;
 import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
-public class AbilityDrainLife extends Ability{
+public class AbilityDrainLife extends Ability {
+	
+	public AbilityDrainLife() {
+		super();
+		config = new int[] {1, 0, 3, 100};
+	}
 	
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -59,7 +64,9 @@ public class AbilityDrainLife extends Ability{
 			LivingEntity entity) {
 		if (quester == null) return;
 		Player player = quester.getPlayer();
-		int drain = myclass.getGenerator().nextInt(3 + myclass.getCasterLevel()) + 1;
+		int min = config[0] + (int)(((double)config[1] / 100) * myclass.getCasterLevel());
+		int max = config[2] + (int)(((double)config[3] / 100) * myclass.getCasterLevel());
+		int drain = myclass.getGenerator().nextInt(1 + max - min) + min;
 		if (entity != null) {
 			MineQuest.damage(entity, drain, quester);
 			if (quester != null) quester.setHealth(quester.getHealth() + drain);

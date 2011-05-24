@@ -30,6 +30,10 @@ import org.monk.MineQuest.Event.Relative.AuraEvent;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityHealAura extends Ability {
+	public AbilityHealAura() {
+		super();
+		config = new int[] {10000, 150000, 0, 25, 15};
+	}
 	
 	@Override
 	public List<ItemStack> getManaCost() {
@@ -54,7 +58,13 @@ public class AbilityHealAura extends Ability {
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
-		MineQuest.getEventParser().addEvent(new AuraEvent(quester, 10000, 150000, myclass.getCasterLevel() / 4, true, 15));
+		int heal;
+		if (myclass != null) {
+			heal = config[2] + (int)(((double)config[3]) / 100 * myclass.getCasterLevel());
+		} else {
+			heal = config[2] + (int)(((double)config[3]) / 100 * MineQuest.getAdjustment() * MineQuest.getAdjustmentMultiplier());
+		}
+		MineQuest.getEventParser().addEvent(new AuraEvent(quester, config[0], config[1], heal, true, config[4]));
 	}
 
 	@Override

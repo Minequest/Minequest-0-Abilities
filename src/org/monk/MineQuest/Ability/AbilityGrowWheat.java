@@ -29,14 +29,18 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityGrowWheat extends Ability {
+	public AbilityGrowWheat() {
+		super();
+		config = new int[] {2, 3};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		int x, z;
 		
-		for (z = -2; z < 3; z++) {
-			for (x = -2; x < 3; x++) {
+		for (z = -config[0]; z < config[1]; z++) {
+			for (x = -config[0]; x < config[1]; x++) {
 				if (location.getWorld().getBlockAt(
 						(int)location.getX() + x, 
 						(int)location.getY() - 1, 

@@ -30,11 +30,15 @@ import org.monk.MineQuest.Ability.PurgeType;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityPurgeSpider extends Ability {
+	public AbilityPurgeSpider() {
+		super();
+		config = new int[] {10};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
-		purgeEntities(quester.getPlayer(), 10, PurgeType.SPIDER);
+		purgeEntities(quester.getPlayer(), config[0], PurgeType.SPIDER);
 	}
 
 	@Override

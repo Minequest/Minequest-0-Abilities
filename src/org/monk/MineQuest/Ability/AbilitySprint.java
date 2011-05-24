@@ -33,6 +33,8 @@ import org.monk.MineQuest.Quester.Quester;
 public class AbilitySprint extends Ability {
 
 	public AbilitySprint() {
+		super();
+		config = new int[] {2, 50};
 	}
 	
 	@Override
@@ -81,7 +83,8 @@ public class AbilitySprint extends Ability {
 		if (Math.abs(difference) < 2) {
 			loc.setY(loc.getY() + difference);
 		}
-		Vector vel = new Vector(2*(loc.getX() - locp.getX()), .5*(loc.getY() - locp.getY()), 2*(loc.getZ() - locp.getZ()));
+		double y_factor = ((double)config[1] / 100);
+		Vector vel = new Vector(config[0]*(loc.getX() - locp.getX()), y_factor*(loc.getY() - locp.getY()), config[0]*(loc.getZ() - locp.getZ()));
 		player.setVelocity(vel);
 		if ((loc.getBlock().getType() != Material.AIR) && (quester.canEdit(loc.getBlock()))) {
 			player.teleport(loc);

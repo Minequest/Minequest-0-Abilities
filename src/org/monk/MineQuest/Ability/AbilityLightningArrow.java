@@ -12,7 +12,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Event.Absolute.BlockCDEvent;
 import org.monk.MineQuest.Quester.Quester;
 
-public class AbilityLightningArrow extends Ability{
+public class AbilityLightningArrow extends Ability {
+	public AbilityLightningArrow() {
+		config = new int[] {2, 2};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -24,10 +27,10 @@ public class AbilityLightningArrow extends Ability{
 		if (entity != null) {
 			int level = MineQuest.getAdjustment();
 			if (myclass != null) {
-				level = myclass.getCasterLevel() / 2;
+				level = myclass.getCasterLevel() / config[1];
 			}
 			
-			MineQuest.damage(entity, level + 2);
+			MineQuest.damage(entity, level + config[0]);
 		}
 	}
 

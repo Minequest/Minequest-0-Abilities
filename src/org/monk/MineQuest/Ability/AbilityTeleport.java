@@ -12,6 +12,10 @@ import org.monk.MineQuest.Ability.Ability;
 import org.monk.MineQuest.Quester.Quester;
 
 public class AbilityTeleport extends Ability {
+	public AbilityTeleport() {
+		super();
+		config = new int[] {40};
+	}
 
 	@Override
 	public void castAbility(Quester quester, Location location,
@@ -24,8 +28,8 @@ public class AbilityTeleport extends Ability {
 //		while (rot < 0) rot += 360;
 		
 
-		loc.setX(loc.getX() + 40 * Math.sin(rot));
-		loc.setZ(loc.getZ() + 40 * Math.cos(rot));
+		loc.setX(loc.getX() + config[0] * Math.sin(rot));
+		loc.setZ(loc.getZ() + config[0] * Math.cos(rot));
 //		if ((rot  < 45) || (rot > 315)) {
 //			loc.setX(loc.getX() - 40);
 //		} else if ((rot > 45) && (rot < 135)) {
