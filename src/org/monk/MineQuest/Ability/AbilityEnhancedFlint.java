@@ -72,11 +72,13 @@ public class AbilityEnhancedFlint extends Ability implements PassiveAbility, Bre
 
 	@Override
 	public void blockBreak(Quester quester, Block block) {
-		if (block.getType() == Material.GRAVEL) {
-			double chance = ((double)config[0]) / 100;
-			if (myclass.getGenerator().nextDouble() < chance) {
-				block.getWorld().dropItemNaturally(block.getLocation(),
-						new ItemStack(Material.FLINT, 1));
+		if (enabled) {
+			if (block.getType() == Material.GRAVEL) {
+				double chance = ((double)config[0]) / 100;
+				if (myclass.getGenerator().nextDouble() < chance) {
+					block.getWorld().dropItemNaturally(block.getLocation(),
+							new ItemStack(Material.FLINT, 1));
+				}
 			}
 		}
 	}
