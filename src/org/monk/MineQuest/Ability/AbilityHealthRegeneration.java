@@ -24,8 +24,8 @@ public class AbilityHealthRegeneration extends Ability implements PassiveAbility
 	public void enable(Quester quester) {
 		super.enable(quester);
 		if (enabled) {
-			MineQuest.getEventParser().addEvent(new AbilityEvent(config[1], this));
-			MineQuest.getEventParser().addEvent(new AuraEvent(quester, config[0], config[1], config[2], true, 0));
+			MineQuest.getEventQueue().addEvent(new AbilityEvent(config[1], this));
+			MineQuest.getEventQueue().addEvent(new AuraEvent(quester, config[0], config[1], config[2], true, 0));
 		}
 	}
 	

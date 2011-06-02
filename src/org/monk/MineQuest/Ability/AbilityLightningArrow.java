@@ -21,7 +21,7 @@ public class AbilityLightningArrow extends Ability {
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		location.getWorld().strikeLightning(location);
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, 
+		MineQuest.getEventQueue().addEvent(new BlockCDEvent(10, 30000, 
 				location.getBlock(), Material.FIRE));
 		
 		if (entity != null) {

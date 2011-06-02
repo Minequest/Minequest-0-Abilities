@@ -26,7 +26,7 @@ public class AbilityIceBlast extends Ability {
 		
 		ability.castAbility(quester, location, entity);
 
-		MineQuest.getEventParser().addEvent(
+		MineQuest.getEventQueue().addEvent(
 				new ExplosionEvent(10, location.getWorld(), location.getX(),
 						location.getY(), location.getZ(), 0, 0));
 

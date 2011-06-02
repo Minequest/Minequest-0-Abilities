@@ -102,22 +102,22 @@ public class AbilityFireball extends Ability {
 		Block nblock = world.getBlockAt((int)location.getX(), 
 				getNearestY(location.getWorld(), (int)location.getX(), (int)location.getY(), (int)location.getZ()), 
 				(int)location.getZ());
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
+		MineQuest.getEventQueue().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
 		
 		nblock = world.getBlockAt((int)location.getX() + x, 
 				getNearestY(location.getWorld(), (int)location.getX() + x, (int)location.getY(), (int)location.getZ()), 
 				(int)location.getZ());
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
+		MineQuest.getEventQueue().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
 		
 		nblock = world.getBlockAt((int)location.getX() + x, 
 				getNearestY(location.getWorld(), (int)location.getX() + x, (int)location.getY(), (int)location.getZ() + z), 
 				(int)location.getZ() + z);
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
+		MineQuest.getEventQueue().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
 		
 		nblock = world.getBlockAt((int)location.getX(), 
 				getNearestY(location.getWorld(), (int)location.getX(), (int)location.getY(), (int)location.getZ() + z), 
 				(int)location.getZ() + z);
-		MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
+		MineQuest.getEventQueue().addEvent(new BlockCDEvent(10, 30000, nblock, Material.FIRE));
 		
 		if (entity != null) {
 			int level = MineQuest.getAdjustment();

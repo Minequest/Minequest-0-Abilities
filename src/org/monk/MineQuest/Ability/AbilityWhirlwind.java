@@ -31,10 +31,10 @@ public class AbilityWhirlwind extends Ability {
 		int i;
 		for (i = 0; i < 10; i++) {
 			loc= new Location(loc.getWorld(), loc.getX(), loc.getY(), loc.getZ(), loc.getYaw() + (360 / 10), loc.getPitch());
-			MineQuest.getEventParser().addEvent(new EntityTeleportEvent(100 * (i + 1), quester, loc));
+			MineQuest.getEventQueue().addEvent(new EntityTeleportEvent(100 * (i + 1), quester, loc));
 		}
 		purgeEntities(quester.getPlayer(), 2, PurgeType.ALL);
-		MineQuest.getEventParser().addEvent(new AuraEvent(quester, 500, 500, -config[0], false, 3));
+		MineQuest.getEventQueue().addEvent(new AuraEvent(quester, 500, 500, -config[0], false, 3));
 	}
 
 	@Override

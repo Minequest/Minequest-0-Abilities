@@ -63,7 +63,7 @@ public class AbilityDamageAura extends Ability {
 		} else {
 			damage = config[2] + (int)(((double)config[3]) / 100 * MineQuest.getAdjustment() * MineQuest.getAdjustmentMultiplier());
 		}
-		MineQuest.getEventParser().addEvent(new AuraEvent(quester, config[0], config[1], -damage, false, config[4]));
+		MineQuest.getEventQueue().addEvent(new AuraEvent(quester, config[0], config[1], -damage, false, config[4]));
 	}
 
 	@Override

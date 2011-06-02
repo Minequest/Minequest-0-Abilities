@@ -67,7 +67,7 @@ public class AbilityFireArrow extends Ability {
 			Block block = player.getWorld().getBlockAt((int)loc.getX(), 
 					getNearestY(location.getWorld(), (int)location.getX(), (int)location.getY(), (int)location.getZ()), 
 					(int)loc.getZ());
-			MineQuest.getEventParser().addEvent(new BlockCDEvent(10, 30000, block, Material.FIRE));
+			MineQuest.getEventQueue().addEvent(new BlockCDEvent(10, 30000, block, Material.FIRE));
 			
 			if ((entity != null) && (config[0] > 0)) {
 				MineQuest.damage(entity, config[0], quester);

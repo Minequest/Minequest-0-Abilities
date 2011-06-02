@@ -115,7 +115,7 @@ public class AbilityWallofFire extends Ability {
 		World world = location.getWorld();
 		for (i = 0; i < 7; i++) {
 			Block nblock = world.getBlockAt(x, getNearestY(location.getWorld(), x, (int)location.getY(), z), z);
-			MineQuest.getEventParser().addEvent(new BlockCDEvent(0, 60000, nblock, Material.FIRE));
+			MineQuest.getEventQueue().addEvent(new BlockCDEvent(0, 60000, nblock, Material.FIRE));
 			x += x_change;
 			z += z_change;
 		}

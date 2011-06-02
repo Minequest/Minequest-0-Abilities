@@ -40,7 +40,7 @@ public class AbilityPoisonArrow extends Ability {
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		if (entity != null) {
-			MineQuest.getEventParser().addEvent(new PoisonEvent(config[0], entity, config[1], config[2]));
+			MineQuest.getEventQueue().addEvent(new PoisonEvent(config[0], entity, config[1], config[2]));
 		} else {
 			giveManaCost(quester.getPlayer());
 			quester.sendMessage("Must be bound to an attack");

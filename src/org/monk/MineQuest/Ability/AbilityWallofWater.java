@@ -107,7 +107,7 @@ public class AbilityWallofWater extends Ability {
 		World world = player.getWorld();
 		for (i = 0; i < 7; i++) {
 			Block nblock = world.getBlockAt(x, getNearestY(player.getWorld(), x, (int)player.getLocation().getY(), z), z);
-			MineQuest.getEventParser().addEvent(new BlockCDEvent(0, 60000, nblock, Material.WATER));
+			MineQuest.getEventQueue().addEvent(new BlockCDEvent(0, 60000, nblock, Material.WATER));
 			x += x_change;
 			z += z_change;
 		}

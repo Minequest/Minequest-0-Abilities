@@ -33,8 +33,8 @@ public class AbilityExplodeCreepers extends Ability {
 		
 		for (LivingEntity lentity : getEntities((quester != null)?quester.getPlayer():entity, config[0])) {
 			if (lentity instanceof Creeper) {
-				MineQuest.getEventParser().addEvent(new ExplosionEvent(10, world, lentity, 0, 0, 0, config[1], config[2]));
-				MineQuest.getEventParser().addEvent(new HealthEvent(20, lentity, 0));
+				MineQuest.getEventQueue().addEvent(new ExplosionEvent(10, world, lentity, 0, 0, 0, config[1], config[2]));
+				MineQuest.getEventQueue().addEvent(new HealthEvent(20, lentity, 0));
 			}
 		}
 	}

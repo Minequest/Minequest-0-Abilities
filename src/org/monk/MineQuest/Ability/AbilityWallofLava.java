@@ -106,8 +106,8 @@ public class AbilityWallofLava extends Ability {
 		for (i = 0; i < 7; i++) {
 			Block nblock = world.getBlockAt(x, getNearestY(player.getWorld(), x, (int)player.getLocation().getY(), z), z);
 			Block dirt_block = world.getBlockAt(x + dirt_x, getNearestY(player.getWorld(), x + dirt_x, (int)player.getLocation().getY(), z + dirt_z), z + dirt_z);
-			MineQuest.getEventParser().addEvent(new BlockCDEvent(0, 60000, nblock, Material.LAVA));
-			MineQuest.getEventParser().addEvent(new BlockCDEvent(0, 60000, dirt_block, Material.DIRT));
+			MineQuest.getEventQueue().addEvent(new BlockCDEvent(0, 60000, nblock, Material.LAVA));
+			MineQuest.getEventQueue().addEvent(new BlockCDEvent(0, 60000, dirt_block, Material.DIRT));
 			x += x_change;
 			z += z_change;
 		}

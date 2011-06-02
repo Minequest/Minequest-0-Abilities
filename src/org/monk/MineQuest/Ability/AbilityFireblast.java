@@ -34,11 +34,11 @@ public class AbilityFireblast extends Ability {
 					lentity.getLocation().getX(),
 					lentity.getLocation().getY(),
 					lentity.getLocation().getZ()), entity);
-			MineQuest.getEventParser().addEvent(new AbilityEvent(100, ability));
+			MineQuest.getEventQueue().addEvent(new AbilityEvent(100, ability));
 		}
 		
 		if ((quester == null) || quester.canEdit(location.getBlock())) {
-			MineQuest.getEventParser().addEvent(new ExplosionEvent(10, location.getWorld(), 
+			MineQuest.getEventQueue().addEvent(new ExplosionEvent(10, location.getWorld(), 
 					location.getX(), location.getY(), location.getZ(), ((float)config[1]) / 100, config[2]));
 		}
 	}

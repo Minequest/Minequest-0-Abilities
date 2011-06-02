@@ -143,8 +143,8 @@ public class AbilityEncase extends Ability {
 
 	private void encase(Block block, boolean tall) {
 		Material mat = block.getType();
-		MineQuest.getEventParser().addEvent(new BlockEvent(15000, block, mat));
-		MineQuest.getEventParser().addEvent(new BlockEvent(10, block, Material.COBBLESTONE));
+		MineQuest.getEventQueue().addEvent(new BlockEvent(15000, block, mat));
+		MineQuest.getEventQueue().addEvent(new BlockEvent(10, block, Material.COBBLESTONE));
 		if (tall) {
 			Location loc = new Location(block.getWorld(),
 					block.getLocation().getX(),
