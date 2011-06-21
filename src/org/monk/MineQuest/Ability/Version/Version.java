@@ -4,6 +4,6 @@ import org.monk.MineQuest.Ability.MineQuestVersion;
 
 public class Version implements MineQuestVersion {
 	public int getVersion() {
-		return 1;
+		return 3;
 	} 
 }
