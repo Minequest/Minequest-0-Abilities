@@ -7,12 +7,12 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.MineQuest;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Ability.PassiveAbility;
-import org.monk.MineQuest.Event.AbilityEvent;
-import org.monk.MineQuest.Event.Relative.AuraEvent;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.MineQuest;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Ability.PassiveAbility;
+import org.monksanctum.MineQuest.Event.AbilityEvent;
+import org.monksanctum.MineQuest.Event.Relative.AuraEvent;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityHealthRegeneration extends Ability implements PassiveAbility {
 	public AbilityHealthRegeneration() {
@@ -43,7 +43,7 @@ public class AbilityHealthRegeneration extends Ability implements PassiveAbility
 	}
 
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> list = new ArrayList<ItemStack>();
 
 		list.add(new ItemStack(Material.BREAD, 1));

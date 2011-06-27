@@ -26,7 +26,8 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityHighJump extends Ability {
 
@@ -36,7 +37,7 @@ public class AbilityHighJump extends Ability {
 	}
 	
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> list = new ArrayList<ItemStack>();
 		
 		list.add(new ItemStack(288, 1));

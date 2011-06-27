@@ -25,8 +25,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityLavaToWater extends Ability {
 	public AbilityLavaToWater() {
@@ -40,7 +40,7 @@ public class AbilityLavaToWater extends Ability {
 	}
 	
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> cost = new ArrayList<ItemStack>();
 		
 		cost.add(new ItemStack(Material.SNOW_BLOCK, 1));

@@ -9,11 +9,11 @@ import org.bukkit.World;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.MineQuest;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Event.Absolute.HealthEvent;
-import org.monk.MineQuest.Event.Relative.ExplosionEvent;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.MineQuest;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Event.Absolute.HealthEvent;
+import org.monksanctum.MineQuest.Event.Relative.ExplosionEvent;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityExplodeCreepers extends Ability {
 	public AbilityExplodeCreepers() {
@@ -40,7 +40,7 @@ public class AbilityExplodeCreepers extends Ability {
 	}
 
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> cost = new ArrayList<ItemStack>();
 		
 		cost.add(new ItemStack(Material.SULPHUR, 1));

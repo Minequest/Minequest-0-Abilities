@@ -27,10 +27,10 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.MineQuest;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Event.Absolute.BlockCDEvent;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.MineQuest;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Event.Absolute.BlockCDEvent;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityFireArrow extends Ability {
 	public AbilityFireArrow() {
@@ -39,7 +39,7 @@ public class AbilityFireArrow extends Ability {
 	}
 	
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> list = new ArrayList<ItemStack>();
 		
 		list.add(new ItemStack(263, 1));
@@ -73,7 +73,7 @@ public class AbilityFireArrow extends Ability {
 				MineQuest.damage(entity, config[0], quester);
 			}
 		} else {
-			giveManaCost(player);
+			giveCost(player);
 			player.sendMessage("Fire Arrow must be bound to a bow attack - Recommended that it is ranged");
 			return;
 		}

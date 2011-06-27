@@ -7,10 +7,10 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Ability.DefendingAbility;
-import org.monk.MineQuest.Ability.PassiveAbility;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Ability.DefendingAbility;
+import org.monksanctum.MineQuest.Ability.PassiveAbility;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityToughness extends Ability implements DefendingAbility, PassiveAbility {
 	private boolean damage;
@@ -28,7 +28,7 @@ public class AbilityToughness extends Ability implements DefendingAbility, Passi
 	}
 
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> cost = new ArrayList<ItemStack>();
 		
 		cost.add(new ItemStack(Material.GRILLED_PORK, 1));

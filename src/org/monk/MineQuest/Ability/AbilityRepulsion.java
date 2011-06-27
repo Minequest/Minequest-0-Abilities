@@ -24,9 +24,9 @@ import java.util.List;
 import org.bukkit.Location;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Ability.PurgeType;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Ability.PurgeType;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityRepulsion extends Ability {
 
@@ -36,7 +36,7 @@ public class AbilityRepulsion extends Ability {
 	}
 	
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> list = new ArrayList<ItemStack>();
 		
 		list.add(new ItemStack(50, 1));

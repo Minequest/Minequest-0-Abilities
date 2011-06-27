@@ -25,10 +25,10 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.MineQuest;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Event.PoisonEvent;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.MineQuest;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Event.PoisonEvent;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityPoisonArrow extends Ability {
 	public AbilityPoisonArrow() {
@@ -42,13 +42,13 @@ public class AbilityPoisonArrow extends Ability {
 		if (entity != null) {
 			MineQuest.getEventQueue().addEvent(new PoisonEvent(config[0], entity, config[1], config[2]));
 		} else {
-			giveManaCost(quester.getPlayer());
+			giveCost(quester.getPlayer());
 			quester.sendMessage("Must be bound to an attack");
 		}
 	}
 
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> cost = new ArrayList<ItemStack>();
 		
 		cost.add(new ItemStack(Material.PORK, 1));

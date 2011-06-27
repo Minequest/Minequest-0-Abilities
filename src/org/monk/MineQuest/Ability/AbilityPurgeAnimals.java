@@ -25,9 +25,9 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Ability.PurgeType;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Ability.PurgeType;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityPurgeAnimals extends Ability {
 	public AbilityPurgeAnimals() {
@@ -42,7 +42,7 @@ public class AbilityPurgeAnimals extends Ability {
 	}
 
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> cost = new ArrayList<ItemStack>();
 		
 		cost.add(new ItemStack(Material.TORCH, 1));

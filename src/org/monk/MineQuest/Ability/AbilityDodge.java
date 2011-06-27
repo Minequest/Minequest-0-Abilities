@@ -26,10 +26,10 @@ import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Ability.DefendingAbility;
-import org.monk.MineQuest.Ability.PassiveAbility;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Ability.DefendingAbility;
+import org.monksanctum.MineQuest.Ability.PassiveAbility;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityDodge extends Ability implements PassiveAbility, DefendingAbility {
 
@@ -39,7 +39,7 @@ public class AbilityDodge extends Ability implements PassiveAbility, DefendingAb
 	}
 	
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> list = new ArrayList<ItemStack>();
 		
 		list.add(new ItemStack(288, 1));

@@ -11,10 +11,10 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Skeleton;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Ability.DefendingAbility;
-import org.monk.MineQuest.Ability.PassiveAbility;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Ability.DefendingAbility;
+import org.monksanctum.MineQuest.Ability.PassiveAbility;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityDeflectMissiles extends Ability implements DefendingAbility, PassiveAbility {
 	
@@ -30,7 +30,7 @@ public class AbilityDeflectMissiles extends Ability implements DefendingAbility,
 	}
 
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> cost = new ArrayList<ItemStack>();
 		int i;
 		

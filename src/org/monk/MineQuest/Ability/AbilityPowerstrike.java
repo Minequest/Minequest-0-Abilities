@@ -24,9 +24,9 @@ import java.util.List;
 import org.bukkit.Location;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
-import org.monk.MineQuest.MineQuest;
-import org.monk.MineQuest.Ability.Ability;
-import org.monk.MineQuest.Quester.Quester;
+import org.monksanctum.MineQuest.MineQuest;
+import org.monksanctum.MineQuest.Ability.Ability;
+import org.monksanctum.MineQuest.Quester.Quester;
 
 public class AbilityPowerstrike extends Ability{
 	public AbilityPowerstrike() {
@@ -35,7 +35,7 @@ public class AbilityPowerstrike extends Ability{
 	}
 	
 	@Override
-	public List<ItemStack> getManaCost() {
+	public List<ItemStack> getSpellComps() {
 		List<ItemStack> list = new ArrayList<ItemStack>();
 
 		list.add(new ItemStack(268, 1));
@@ -59,7 +59,7 @@ public class AbilityPowerstrike extends Ability{
 		if (entity != null) {
 			MineQuest.damage(entity, config[0], quester);
 		} else {
-			giveManaCost(quester.getPlayer());
+			giveCost(quester.getPlayer());
 			quester.getPlayer().sendMessage(getName() + " must be bound to an attack");
 			return;
 		}
