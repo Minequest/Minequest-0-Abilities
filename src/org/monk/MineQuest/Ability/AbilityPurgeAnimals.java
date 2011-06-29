@@ -70,4 +70,9 @@ public class AbilityPurgeAnimals extends Ability {
 		return "Farmer";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 32;
+	}
+
 }

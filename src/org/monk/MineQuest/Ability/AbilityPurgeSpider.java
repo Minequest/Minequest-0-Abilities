@@ -68,4 +68,9 @@ public class AbilityPurgeSpider extends Ability {
 		return "PeaceMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 32;
+	}
+
 }

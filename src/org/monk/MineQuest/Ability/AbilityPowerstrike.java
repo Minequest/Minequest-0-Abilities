@@ -70,4 +70,9 @@ public class AbilityPowerstrike extends Ability{
 		return "Warrior";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 15;
+	}
+
 }

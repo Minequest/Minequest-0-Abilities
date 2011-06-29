@@ -87,4 +87,10 @@ public class AbilityBash extends Ability {
 		return "Warrior";
 	}
 
+
+	@Override
+	public int getIconLoc() {
+		return 0;
+	}
+
 }

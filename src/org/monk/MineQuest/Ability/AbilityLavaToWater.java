@@ -89,4 +89,9 @@ public class AbilityLavaToWater extends Ability {
 		return "Miner";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 29;
+	}
+
 }

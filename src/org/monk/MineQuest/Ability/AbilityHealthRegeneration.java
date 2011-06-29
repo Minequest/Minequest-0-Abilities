@@ -67,4 +67,9 @@ public class AbilityHealthRegeneration extends Ability implements PassiveAbility
 		return "Warrior";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 26;
+	}
+
 }

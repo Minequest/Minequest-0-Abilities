@@ -126,4 +126,9 @@ public class AbilityWallofFire extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 41;
+	}
+
 }

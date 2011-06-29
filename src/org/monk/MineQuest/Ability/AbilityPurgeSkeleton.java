@@ -68,4 +68,9 @@ public class AbilityPurgeSkeleton extends Ability {
 		return "PeaceMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 32;
+	}
+
 }

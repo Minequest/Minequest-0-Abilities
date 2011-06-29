@@ -181,4 +181,9 @@ public class AbilityEncase extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 10;
+	}
+
 }

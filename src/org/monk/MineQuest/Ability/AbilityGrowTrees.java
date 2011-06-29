@@ -76,4 +76,9 @@ public class AbilityGrowTrees extends Ability {
 		return "Lumberjack";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 19;
+	}
+
 }

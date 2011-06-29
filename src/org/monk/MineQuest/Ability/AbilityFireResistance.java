@@ -63,4 +63,9 @@ public class AbilityFireResistance extends Ability implements PassiveAbility {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 18;
+	}
+
 }

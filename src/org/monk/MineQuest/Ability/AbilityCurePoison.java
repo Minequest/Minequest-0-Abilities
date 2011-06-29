@@ -72,4 +72,9 @@ public class AbilityCurePoison extends Ability {
 		return "PeaceMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 3;
+	}
+
 }

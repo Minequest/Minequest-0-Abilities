@@ -81,4 +81,9 @@ public class AbilityHeal extends Ability {
 		return "PeaceMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 24;
+	}
+
 }

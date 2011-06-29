@@ -66,4 +66,9 @@ public class AbilityIceBlast extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 28;
+	}
+
 }

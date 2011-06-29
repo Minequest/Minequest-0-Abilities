@@ -80,4 +80,9 @@ public class AbilityHighJump extends Ability {
 	public String getSkillClass() {
 		return "Warrior";
 	}
+
+	@Override
+	public int getIconLoc() {
+		return 42;
+	}
 }

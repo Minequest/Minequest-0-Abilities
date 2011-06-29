@@ -80,4 +80,9 @@ public class AbilityTowerofSand extends Ability {
 		return "Digger";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 36;
+	}
+
 }

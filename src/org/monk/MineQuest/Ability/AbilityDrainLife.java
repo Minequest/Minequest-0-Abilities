@@ -80,4 +80,9 @@ public class AbilityDrainLife extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 9;
+	}
+
 }

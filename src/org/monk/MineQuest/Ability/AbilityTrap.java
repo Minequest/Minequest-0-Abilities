@@ -94,4 +94,9 @@ public class AbilityTrap extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 37;
+	}
+
 }

@@ -76,4 +76,9 @@ public class AbilityDeflectMissiles extends Ability implements DefendingAbility,
 		return "Archer";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 7;
+	}
+
 }

@@ -63,4 +63,9 @@ public class AbilityToughness extends Ability implements DefendingAbility, Passi
 		return "Warrior";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 35;
+	}
+
 }

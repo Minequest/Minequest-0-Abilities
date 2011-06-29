@@ -99,4 +99,9 @@ public class AbilityIceSphere extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 27;
+	}
+
 }

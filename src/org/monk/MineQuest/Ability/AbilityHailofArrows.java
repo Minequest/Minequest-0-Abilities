@@ -88,4 +88,9 @@ public class AbilityHailofArrows extends Ability {
 		return "Archer";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 21;
+	}
+
 }

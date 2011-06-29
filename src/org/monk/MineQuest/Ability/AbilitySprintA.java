@@ -98,4 +98,9 @@ public class AbilitySprintA extends Ability {
 	public String getSkillClass() {
 		return "Archer";
 	}
+
+	@Override
+	public int getIconLoc() {
+		return 33;
+	}
 }

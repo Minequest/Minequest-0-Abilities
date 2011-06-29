@@ -63,4 +63,9 @@ public class AbilityWhirlwind extends Ability {
 		return "Warrior";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 38;
+	}
+
 }

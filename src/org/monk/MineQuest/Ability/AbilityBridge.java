@@ -137,4 +137,9 @@ public class AbilityBridge extends Ability {
 		return "Miner";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 1;
+	}
+
 }

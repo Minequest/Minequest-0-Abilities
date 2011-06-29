@@ -118,4 +118,9 @@ public class AbilityWallofLava extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 40;
+	}
+
 }

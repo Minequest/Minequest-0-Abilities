@@ -137,4 +137,9 @@ public class AbilityFireball extends Ability {
 	public String getSkillClass() {
 		return "WarMage";
 	}
+
+	@Override
+	public int getIconLoc() {
+		return 14;
+	}
 }

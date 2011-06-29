@@ -71,4 +71,9 @@ public class AbilityHealAura extends Ability {
 	public String getSkillClass() {
 		return "PeaceMage";
 	}
+
+	@Override
+	public int getIconLoc() {
+		return 23;
+	}
 }

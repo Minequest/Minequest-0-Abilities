@@ -68,4 +68,9 @@ public class AbilityTeleport extends Ability {
 	public String getSkillClass() {
 		return "PeaceMage";
 	}
+
+	@Override
+	public int getIconLoc() {
+		return 34;
+	}
 }

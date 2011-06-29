@@ -99,4 +99,9 @@ public class AbilitySprint extends Ability {
 		return "Warrior";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 33;
+	}
+
 }

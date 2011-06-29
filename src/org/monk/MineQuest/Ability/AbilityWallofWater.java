@@ -118,4 +118,9 @@ public class AbilityWallofWater extends Ability {
 		return "PeaceMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 39;
+	}
+
 }

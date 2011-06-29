@@ -125,4 +125,9 @@ public class AbilityDodgeA extends Ability implements PassiveAbility, DefendingA
 	public String getSkillClass() {
 		return "Archer";
 	}
+
+	@Override
+	public int getIconLoc() {
+		return 8;
+	}
 }

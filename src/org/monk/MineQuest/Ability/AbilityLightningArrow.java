@@ -58,4 +58,9 @@ public class AbilityLightningArrow extends Ability {
 		return "Archer";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 30;
+	}
+
 }

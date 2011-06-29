@@ -84,4 +84,9 @@ public class AbilityEnhancedFlint extends Ability implements PassiveAbility, Bre
 		}
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 11;
+	}
+
 }

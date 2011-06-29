@@ -89,4 +89,9 @@ public class AbilityFireblast extends Ability {
 		return "WarMage";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 16;
+	}
+
 }

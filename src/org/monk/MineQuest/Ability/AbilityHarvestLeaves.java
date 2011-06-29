@@ -85,4 +85,9 @@ public class AbilityHarvestLeaves extends Ability {
 		return "Lumberjack";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 22;
+	}
+
 }

@@ -85,4 +85,9 @@ public class AbilityGrowWheat extends Ability {
 		return "Farmer";
 	}
 
+	@Override
+	public int getIconLoc() {
+		return 20;
+	}
+
 }
