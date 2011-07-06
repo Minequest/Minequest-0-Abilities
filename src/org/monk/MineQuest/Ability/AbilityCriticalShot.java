@@ -21,7 +21,7 @@ public class AbilityCriticalShot extends Ability {
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		if (entity != null) {
-			MineQuest.damage(entity, config[0]);
+			MineQuest.damage(entity, config[0], quester);
 		} else {
 			giveCost(quester.getPlayer());
 			notify(quester, "Must be bound to an attack");

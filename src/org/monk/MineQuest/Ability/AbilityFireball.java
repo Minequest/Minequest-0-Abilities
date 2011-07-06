@@ -124,7 +124,7 @@ public class AbilityFireball extends Ability {
 			if (myclass != null) {
 				level = myclass.getCasterLevel() / config[1];
 			}
-			MineQuest.damage(entity, config[0] + level);
+			MineQuest.damage(entity, config[0] + level, quester);
 		}
 	}
 

@@ -30,7 +30,7 @@ public class AbilityLightningArrow extends Ability {
 				level = myclass.getCasterLevel() / config[1];
 			}
 			
-			MineQuest.damage(entity, level + config[0]);
+			MineQuest.damage(entity, level + config[0], quester);
 		}
 	}
 

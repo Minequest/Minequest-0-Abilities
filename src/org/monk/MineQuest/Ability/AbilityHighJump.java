@@ -83,6 +83,6 @@ public class AbilityHighJump extends Ability {
 
 	@Override
 	public int getIconLoc() {
-		return 42;
+		return 46;
 	}
 }
