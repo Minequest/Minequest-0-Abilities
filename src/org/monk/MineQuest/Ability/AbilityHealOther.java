@@ -65,7 +65,7 @@ public class AbilityHealOther extends Ability {
 		if (entity instanceof Player) {
 			Quester other = MineQuest.getQuester((Player)entity);
 			if (other != null) {
-				if ((player != null) && (MineQuest.isSpellCompEnabled())) {
+				if ((player != null) && (MineQuest.config.spell_comp)) {
 					player.getInventory().addItem(new ItemStack(325, 1));
 					player.updateInventory();
 				}

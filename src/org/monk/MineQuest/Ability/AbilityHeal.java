@@ -59,7 +59,7 @@ public class AbilityHeal extends Ability {
 	public void castAbility(Quester quester, Location location,
 			LivingEntity entity) {
 		Player player = quester.getPlayer();
-		if (MineQuest.isSpellCompEnabled()) {
+		if (MineQuest.config.spell_comp) {
 			player.getInventory().addItem(new ItemStack(325, 1));
 			player.updateInventory();
 		}
