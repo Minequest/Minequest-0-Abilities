@@ -25,7 +25,7 @@ public class AbilityLightningArrow extends Ability {
 				location.getBlock(), Material.FIRE));
 		
 		if (entity != null) {
-			int level = MineQuest.getAdjustment();
+			int level = MineQuest.questerHandler.getAdjustment();
 			if (myclass != null) {
 				level = myclass.getCasterLevel() / config[1];
 			}

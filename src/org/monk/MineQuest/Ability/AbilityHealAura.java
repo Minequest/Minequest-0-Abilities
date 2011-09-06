@@ -62,7 +62,7 @@ public class AbilityHealAura extends Ability {
 		if (myclass != null) {
 			heal = config[2] + (int)(((double)config[3]) / 100 * myclass.getCasterLevel());
 		} else {
-			heal = config[2] + (int)(((double)config[3]) / 100 * MineQuest.getAdjustment() * MineQuest.config.adjustment_multiplier);
+			heal = config[2] + (int)(((double)config[3]) / 100 * MineQuest.questerHandler.getAdjustment() * MineQuest.config.adjustment_multiplier);
 		}
 		MineQuest.getEventQueue().addEvent(new AuraEvent(quester, config[0], config[1], heal, true, config[4]));
 	}

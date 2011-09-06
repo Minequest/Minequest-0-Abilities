@@ -60,7 +60,7 @@ public class AbilityCurePoisonOther extends Ability {
 			LivingEntity entity) {
 		Player player = quester.getPlayer();
 		if (entity instanceof Player) {
-			Quester other = MineQuest.getQuester((Player)entity);
+			Quester other = MineQuest.questerHandler.getQuester((Player)entity);
 			if (other != null) {
 				if (other.isPoisoned()) {
 					other.curePoison();
